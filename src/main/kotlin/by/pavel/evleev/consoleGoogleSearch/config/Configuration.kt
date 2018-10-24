@@ -13,8 +13,8 @@ class Configuration private constructor() {
     val searchedElement: String
     val acceptLanguage: String
     val firstResults: Int
-    var dispayResult: DispayResult? = null
-    var scanner: Scanner? = null
+    var displayResult: DispayResult? = null
+    lateinit var scanner: Scanner
 
     private object Holder {
         val INSTANCE = Configuration()
@@ -25,9 +25,8 @@ class Configuration private constructor() {
     }
 
     init {
-        dispayResult = DisplayResultImpl()
         var prop = Properties()
-        val inputStream = Configuration::class.java.getResourceAsStream(configFile)
+        val inputStream = Configuration::class.java.classLoader.getResourceAsStream(configFile)
         prop.load(inputStream)
         baseSearchUrl = prop.getProperty(PropertiesConstant.BASE_SEARCH_URL.value)
         searchedElement = prop.getProperty(PropertiesConstant.SEARCHED_ELEMENT_PATTERN.value)

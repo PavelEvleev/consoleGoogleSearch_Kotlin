@@ -1,3 +1,5 @@
 package by.pavel.evleev.consoleGoogleSearch.data
 
-class Result(val link: String, val title: String)
+class Result(var link: String?, var title: String?) {
+    constructor(): this(null, null)
+}

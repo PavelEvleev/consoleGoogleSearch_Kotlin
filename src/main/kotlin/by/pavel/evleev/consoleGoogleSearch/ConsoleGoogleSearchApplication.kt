@@ -1,11 +1,17 @@
 package by.pavel.evleev.consoleGoogleSearch
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+import by.pavel.evleev.consoleGoogleSearch.config.Configuration
+import by.pavel.evleev.consoleGoogleSearch.view.selectView
 
-@SpringBootApplication
 class ConsoleGoogleSearchApplication
 
 fun main(args: Array<String>) {
-    runApplication<ConsoleGoogleSearchApplication>(*args)
+    val configuration = Configuration.instance
+    println("Hello, it`s simple app for searching first results in Google.")
+
+    configuration.displayResult = selectView(configuration.scanner)
+
+
+
+
 }
