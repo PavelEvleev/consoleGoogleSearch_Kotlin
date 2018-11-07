@@ -7,8 +7,8 @@ import java.io.InputStreamReader
 import java.io.PrintStream
 import java.util.*
 
-class Configuration private constructor() {
-    private val configFile = "application.properties"
+object Configuration {
+    private const val configFile = "application.properties"
     val baseSearchUrl: String
     val searchedElement: String
     val acceptLanguage: String
@@ -16,16 +16,8 @@ class Configuration private constructor() {
     var displayResult: DispayResult? = null
     lateinit var scanner: Scanner
 
-    private object Holder {
-        val INSTANCE = Configuration()
-    }
-
-    companion object {
-        val instance: Configuration by lazy { Holder.INSTANCE }
-    }
-
     init {
-        var prop = Properties()
+        val prop = Properties()
         val inputStream = Configuration::class.java.classLoader.getResourceAsStream(configFile)
         prop.load(inputStream)
         baseSearchUrl = prop.getProperty(PropertiesConstant.BASE_SEARCH_URL.value)

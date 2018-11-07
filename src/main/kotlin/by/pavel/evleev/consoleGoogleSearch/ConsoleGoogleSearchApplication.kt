@@ -6,12 +6,11 @@ import by.pavel.evleev.consoleGoogleSearch.view.selectView
 class ConsoleGoogleSearchApplication
 
 fun main(args: Array<String>) {
-    val configuration = Configuration.instance
+    val configuration = Configuration
+    println(configuration.baseSearchUrl)
     println("Hello, it`s simple app for searching first results in Google.")
 
     configuration.displayResult = selectView(configuration.scanner)
-
-
 
 
 }

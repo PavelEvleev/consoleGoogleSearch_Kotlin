@@ -10,9 +10,9 @@ import java.lang.StringBuilder
 
 class GoogleSearch : Search {
 
-    private val searchUrl: String = Configuration.instance.baseSearchUrl
+    private val searchUrl: String = Configuration.baseSearchUrl
     private val elementExtractor = GoogleSearch.ElementExtractor()
-    private val acceptLanguage = Configuration.instance.acceptLanguage
+    private val acceptLanguage = Configuration.acceptLanguage
     private val specificParameter: String = "search?q="
 
     override fun search(request: String): Array<Result> {
@@ -28,8 +28,8 @@ class GoogleSearch : Search {
 
     class ElementExtractor {
 
-        private val searchedElement = Configuration.instance.searchedElement
-        private val firstResult = Configuration.instance.firstResults
+        private val searchedElement = Configuration.searchedElement
+        private val firstResult = Configuration.firstResults
 
         fun extract(document: Document): Array<Result> {
             val results: Array<Result> = Array(3) { Result() }
