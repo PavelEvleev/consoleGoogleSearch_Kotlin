@@ -2,7 +2,7 @@ package by.pavel.evleev.consoleGoogleSearch.view
 
 import by.pavel.evleev.consoleGoogleSearch.data.Result
 
-interface DispayResult{
+interface DisplayResult {
 
     fun print(results: Array<Result>)
 }

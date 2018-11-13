@@ -1,7 +1,6 @@
 package by.pavel.evleev.consoleGoogleSearch.config
 
-import by.pavel.evleev.consoleGoogleSearch.view.DispayResult
-import by.pavel.evleev.consoleGoogleSearch.view.DisplayResultImpl
+import by.pavel.evleev.consoleGoogleSearch.view.DisplayResult
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.PrintStream
@@ -13,7 +12,7 @@ object Configuration {
     val searchedElement: String
     val acceptLanguage: String
     val firstResults: Int
-    var displayResult: DispayResult? = null
+    var displayResult: DisplayResult? = null
     lateinit var scanner: Scanner
 
     init {

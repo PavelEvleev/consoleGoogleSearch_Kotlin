@@ -6,7 +6,6 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
-import java.lang.StringBuilder
 
 class GoogleSearch : Search {
 
@@ -17,13 +16,13 @@ class GoogleSearch : Search {
 
     override fun search(request: String): Array<Result> {
         val document = request(request)
-       return elementExtractor.extract(document)
+        return elementExtractor.extract(document)
     }
 
     private fun request(request: String): Document {
         var searchRequest = StringBuilder().append(searchUrl).append(specificParameter).append(request).toString()
         return Jsoup.connect(searchRequest).userAgent("Mozilla/5.0")
-                .header("accept-language", acceptLanguage).get()
+            .header("accept-language", acceptLanguage).get()
     }
 
     class ElementExtractor {

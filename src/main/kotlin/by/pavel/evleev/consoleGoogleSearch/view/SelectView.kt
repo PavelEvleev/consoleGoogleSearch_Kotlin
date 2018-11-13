@@ -2,7 +2,7 @@ package by.pavel.evleev.consoleGoogleSearch.view
 
 import java.util.*
 
-fun selectView(scanner: Scanner): DispayResult? {
+fun selectView(scanner: Scanner): DisplayResult? {
 
     var resultView: String
     do {
@@ -17,7 +17,7 @@ fun selectView(scanner: Scanner): DispayResult? {
             }
         }
 
-    } while (resultView.isNullOrEmpty())
+    } while (resultView.isEmpty())
 
     return null
 }

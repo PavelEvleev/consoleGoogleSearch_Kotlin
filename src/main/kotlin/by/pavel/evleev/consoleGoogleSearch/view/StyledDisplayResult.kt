@@ -2,7 +2,7 @@ package by.pavel.evleev.consoleGoogleSearch.view
 
 import by.pavel.evleev.consoleGoogleSearch.data.Result
 
-class StyledDisplayResult : DispayResult {
+class StyledDisplayResult : DisplayResult {
 
     private val separator = CharArray(40) { i -> '-' }
 
